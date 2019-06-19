@@ -16,4 +16,4 @@ Create a .env file in the project's root directory:
 Execute:
 `node server.js`
 
-
+Go to `http://localhost:3005` in your web browser.
