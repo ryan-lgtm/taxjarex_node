@@ -2,10 +2,12 @@ module.exports = {
   collectTransactionData: function(requestData, responseTaxData) {
     //helper to restructure data for API call
 
+    let transactionId = (requestData.transactionId) ? requestData.transactionId : Math.floor(Math.random() * 999999);
     let now = new Date().toISOString();
+
     let data = {
 
-      transaction_id: Math.floor(Math.random() * 99999),
+      transaction_id: transactionId,
       transaction_date: now,
 
       from_country: requestData.from_country,
