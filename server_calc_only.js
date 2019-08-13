@@ -40,22 +40,13 @@ const server = http.createServer((request, response) => {
 
       client.taxForOrder(requestData).then(function(responseTaxData) {
         results.responseTaxData = responseTaxData;
-
-        let transactionPostData = transactionData.collectTransactionData(results.requestData, results.responseTaxData);
-
-        results.transactionPostData = transactionPostData;
-        return client.createOrder(transactionPostData);
       }).then(function(responseTransactionData) {
         results.responseTransactionData = responseTransactionData;
         response.end(
           `===CALCULATE TAX REQUEST DATA===\n\n` +
           JSON.stringify(results.requestData, null, 3) +
           `\n\n===CALCULATE TAX RESPONSE DATA===\n\n` +
-          JSON.stringify(results.responseTaxData, null, 3) +
-          `\n\n===CREATE TRANSACTION REQUEST DATA===\n\n` +
-          JSON.stringify(results.transactionPostData, null, 3) +
-          `\n\n===CREATE TRANSACTION RESPONSE DATA===\n\n` +
-          JSON.stringify(results.responseTransactionData, null, 3)
+          JSON.stringify(results.responseTaxData, null, 3)
         )
       }).catch(err => console.log(err))
     });

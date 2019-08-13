@@ -3,6 +3,7 @@ module.exports = {
     //helper to restructure data for API call
 
     let transactionId = (requestData.transactionId) ? requestData.transactionId : Math.floor(Math.random() * 999999);
+    let exemptionType = (requestData.exemptionType) ? requestData.exemptionType : '';
     let now = new Date().toISOString();
 
     let data = {
@@ -25,6 +26,7 @@ module.exports = {
       amount: responseTaxData.tax.order_total_amount,
       shipping: requestData.shipping,
       sales_tax: responseTaxData.tax.amount_to_collect,
+      exemption_type: exemptionType,
       customer_id: Math.floor(Math.random() * 500),
 
     }
