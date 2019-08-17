@@ -31,6 +31,10 @@ module.exports = {
       discount: data.line_item1_discount
     });
 
+    if (data.exemption_type == '') {
+      delete data.exemption_type
+    }
+    
     let deleteProps = function(obj, prop) {
       for (let p of prop)
         (p in obj) && (delete obj[p]);

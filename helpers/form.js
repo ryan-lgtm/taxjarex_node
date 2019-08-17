@@ -29,7 +29,7 @@ module.exports = {
               <div class="col-md-4">
                 <h2>Details / Costs &amp; Shipping: </h2>
                 <input type="string" name="transaction_id" placeholder="Blank for random" /><label><strong>Transaction Id</strong></label><br />
-                <input type="string" name="exemption_type" value="non_exempt" /><label><strong>Exemption Type</strong></label><br />
+                <input type="string" name="exemption_type" placeholder="Blank for none" /><label><strong>Exemption Type</strong></label><br />
                 <input type="number" name="amount" step=".01" value="21.99" /><label><strong>Amount</strong></label><br />
                 <input type="number" name="shipping" step=".01" value="7.59" /><label><strong>Shipping Costs</strong></label><br />
               </div>
@@ -62,13 +62,14 @@ module.exports = {
                 <h3>Line Item 1</h3>
                   <input type="text" name="line_item1_id" value="1" /><label><strong>Line Item 1 ID</strong></label><br />
                   <input type="number" name="line_item1_quantity" value="1" /><label><strong>Line Item 1 Qty</strong></label><br />
-                  <input type="text" name="line_item1_product_tax_code" value="20010" /><label><strong>Line Item 1 Product Tax Code</strong></label><br />
+                  <input type="text" name="line_item1_product_tax_code" /><label><strong>Line Item 1 Product Tax Code</strong></label><br />
                   <input type="number" name="line_item1_unit_price" step=".01" value="21.99" /><label><strong>Line Item 1 Unit Price</strong></label><br />
                   <input type="number" name="line_item1_discount" step=".01" value="0" /><label><strong>Line Item 1 Discount</strong></label><br />
                 </div>
                 </div>
               <br />
               <div class="col-md-6 offset-md-3" style="text-align: center">
+              <input type="checkbox" name="tax_calc_only" value="true">Tax Calc only?<br />
               <button class="btn btn-primary" style="margin: 0 auto;">Submit</button>
               <br />
               <br />
