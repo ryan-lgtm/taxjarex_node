@@ -2,12 +2,9 @@ module.exports = {
   collectTransactionData: function(requestData, responseTaxData) {
     //helper to restructure data for API call
 
-    let transactionId = (requestData.transactionId) ? requestData.transactionId : Math.floor(Math.random() * 999999);
     let now = new Date().toISOString();
 
     let data = {
-
-      transaction_id: transactionId,
       transaction_date: now,
 
       from_country: requestData.from_country,
@@ -45,6 +42,12 @@ module.exports = {
 
     if (responseTaxData.exemption_type) {
         data.exemption_type = responseTaxData.exemption_type
+    }
+
+    if (requestData.transaction_id) {
+      data.transaction_id = requestData.transaction_id
+    } else {
+      data.transaction_id = Math.floor(Math.random() * 999999)
     }
 
     return data
