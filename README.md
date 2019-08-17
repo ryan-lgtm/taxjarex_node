@@ -5,6 +5,7 @@ A small and super lightweight node application that hooks into the Taxjar API to
 
 **NOTE 2:** *You must have an API token from TaxJar.* Don't have one? Subscribe for a risk-free 30-day Trial Account at https://app.taxjar.com/sign_up.
 
+All information used to build this project had strictly come from TaxJar's public SmartCalcs API:
 https://developers.taxjar.com/api/reference/
 
 ## Install Notes and Usage
@@ -12,7 +13,8 @@ No package.json has been created for this project.
 Requires the following packages from NPM:
 - dotenv
 - http
-- taxjar
+- taxjar  
+
 (`npm install dotenv http taxjar`)
 
 Create a .env file in the project's root directory:

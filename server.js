@@ -35,8 +35,6 @@ const server = http.createServer((request, response) => {
       // 3.) Send a POST to TaxJar via API call.
       let results = {};
       results.requestData = requestData;
-      // Used for load testing 7/8
-      // let n = 15000; while(n-- >0)console.log(client.taxForOrder(requestData));
 
       if (result.tax_calc_only == 'true') {
         client.taxForOrder(requestData).then(function(responseTaxData) {
