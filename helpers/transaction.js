@@ -26,7 +26,7 @@ module.exports = {
 
     }
 
-    if (responseTaxData.has_nexus) {
+    if (responseTaxData.tax.has_nexus) {
       data.line_items = [];
       data.line_items.push({
         id: requestData.line_items[0].id,
