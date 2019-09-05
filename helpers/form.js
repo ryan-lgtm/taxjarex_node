@@ -28,6 +28,7 @@ module.exports = {
               </div>
               <div class="col-md-4">
                 <h2>Details / Costs &amp; Shipping: </h2>
+                <input type="string" name="provider" value="api" /><label><strong>Provider</strong></label><br />
                 <input type="string" name="transaction_id" placeholder="Blank for random" /><label><strong>Transaction Id</strong></label><br />
                 <input type="string" name="exemption_type" placeholder="Blank for none" /><label><strong>Exemption Type</strong></label><br />
                 <input type="number" name="amount" step=".01" value="21.99" /><label><strong>Amount</strong></label><br />

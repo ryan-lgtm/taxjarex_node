@@ -23,7 +23,17 @@ module.exports = {
       shipping: requestData.shipping,
       sales_tax: responseTaxData.tax.amount_to_collect,
       customer_id: Math.floor(Math.random() * 500),
+      provider: requestData.provider
+    }
 
+    if (responseTaxData.tax.exemption_type) {
+        data.exemption_type = responseTaxData.tax.exemption_type
+    }
+
+    if (requestData.transaction_id) {
+      data.transaction_id = requestData.transaction_id
+    } else {
+      data.transaction_id = Math.floor(Math.random() * 999999)
     }
 
     if (responseTaxData.tax.has_nexus) {
@@ -32,22 +42,12 @@ module.exports = {
         id: requestData.line_items[0].id,
         quantity: requestData.line_items[0].quantity,
         product_identifier: Math.floor(Math.random() * 500),
-        product_description: 'A really cool thing',
+        description: 'A really cool thing',
         product_tax_code: requestData.line_items[0].product_tax_code,
         unit_price: requestData.line_items[0].unit_price,
         discount: requestData.line_items[0].discount,
         sales_tax: responseTaxData.tax.breakdown.line_items[0].tax_collectable
       });
-    }
-
-    if (responseTaxData.exemption_type) {
-        data.exemption_type = responseTaxData.exemption_type
-    }
-
-    if (requestData.transaction_id) {
-      data.transaction_id = requestData.transaction_id
-    } else {
-      data.transaction_id = Math.floor(Math.random() * 999999)
     }
 
     return data
