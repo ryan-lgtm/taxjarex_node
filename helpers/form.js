@@ -64,8 +64,8 @@ module.exports = {
                   <input type="text" name="line_item1_id" value="1" /><label><strong>Line Item 1 ID</strong></label><br />
                   <input type="number" name="line_item1_quantity" value="1" /><label><strong>Line Item 1 Qty</strong></label><br />
                   <input type="text" name="line_item1_product_tax_code" /><label><strong>Line Item 1 Product Tax Code</strong></label><br />
-                  <input type="number" name="line_item1_unit_price" step=".01" value="21.99" /><label><strong>Line Item 1 Unit Price</strong></label><br />
-                  <input type="number" name="line_item1_discount" step=".01" value="0" /><label><strong>Line Item 1 Discount</strong></label><br />
+                  <input type="number" name="line_item1_unit_price" step=".0000001" value="21.99" /><label><strong>Line Item 1 Unit Price</strong></label><br />
+                  <input type="number" name="line_item1_discount" step=".0000001" value="0" /><label><strong>Line Item 1 Discount</strong></label><br />
                 </div>
                 </div>
               <br />

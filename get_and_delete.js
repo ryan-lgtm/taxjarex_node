@@ -16,15 +16,15 @@ const client = new Taxjar({
 // END IMPORTS //
 
 // SET THE PROVIDER HERE, IF COMMENTED OUT, DEFAULTED TO "api".
-const provider = 'some_third_party';
+const provider = 'api';
 
 client.listOrders({
-  from_transaction_date: '2019/01/01',
+  from_transaction_date: '2018/01/01',
   to_transaction_date: '2020/01/01',
   provider: provider
 }).then(res => {
   const orderTransactions = res.orders;
-  console.log(orderTransactions);
+  console.log("Order transactions: " + orderTransactions);
   return orderTransactions
 }).then(function(deleteTransactions) {
 
@@ -45,19 +45,19 @@ client.listOrders({
 }).catch(error => console.log(error))
 
 client.listRefunds({
-  from_transaction_date: '2019/01/01',
+  from_transaction_date: '2018/01/01',
   to_transaction_date: '2020/01/01',
   provider: provider
 }).then(res => {
-  const refundTransactions = res.orders;
-  console.log(refundTransactions);
+  const refundTransactions = res.refunds;
+  console.log("Refund Transactions: " + refundTransactions);
   return refundTransactions
 }).then(function(deleteRefunds) {
 
   async function deleteRefund(trxId) {
     console.log("Deleting refund transaction with ID: " + trxId);
     await client.deleteRefund(trxId, {
-      provider: 'mycart'
+      provider: provider
     }).then(res => {
       console.log("Response: " + JSON.stringify(res.order));
       return "Refund Transaction deleted: " + trxId;
