@@ -8,6 +8,8 @@ A small and super lightweight node application that hooks into the Taxjar API to
 All information used to build this project had strictly come from TaxJar's public SmartCalcs API:
 https://developers.taxjar.com/api/reference/
 
+![Image of tarjex_node](https://gdurl.com/WGTq)
+
 ## Install Notes and Usage
 No package.json has been created for this project.
 Requires the following packages from NPM:
